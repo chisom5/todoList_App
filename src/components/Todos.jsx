@@ -8,10 +8,10 @@ const Todos = () => {
       <ul>
         <For each={todosList()}>
           {(item) => (
-            <li class="d-flex align-items-center">
+            <li class="d-flex align-items-center" key={item.id}>
               <input
                 type="checkbox"
-                onChange={() => handleTask(item.text, "todo")}
+                onChange={() => handleTask(item, "todo")}
               />
               <span style="margin-left: 8px">{item.text}</span>
             </li>

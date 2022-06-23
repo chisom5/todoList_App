@@ -8,11 +8,11 @@ const Done = () => {
       <ul>
         <For each={doneList()}>
           {(item) => (
-            <li class="d-flex align-items-center">
+            <li class="d-flex align-items-center" key={item.id}>
               <input
                 type="checkbox"
                 checked={item.completed}
-                onChange={() => handleTask(item.text, "done")}
+                onChange={() => handleTask(item, "done")}
               />
               <span style="margin-left: 8px">{item.text}</span>
             </li>

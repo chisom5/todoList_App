@@ -13,18 +13,25 @@ const handleChange = (e) => {
 
 const handleAddTodo = (e) => {
   e.preventDefault();
-  setTodosList([...todosList(), { text: todoInput(), completed: false }]);
-  setTodoInput("");
+  let exist = todosList().findIndex((i)=> i.text === todoInput());
+
+  if(exist === -1){
+    setTodosList([...todosList(), { id:todoInput().length + 1, text: todoInput(), completed: false }]);
+    setTodoInput("");
+  }else{
+    alert('Item already added.')
+  }
+  
 };
 
 const handleTask = (item, type) => {
   if (type === "todo") {
-    const d = todosList().filter((i) => i.text !== item);
+    const d = todosList().filter((i) => i.id !== item.id);
     setTodosList(d);
-    setDoneList([...doneList(), { text: item, completed: true }]);
+    setDoneList([...doneList(), { id:doneList().length + 1, text: item.text, completed: true }]);
   } else {
-    const d = doneList().filter((i) => i.text !== item);
-    setTodosList([...todosList(), { text: item, completed: false }]);
+    const d = doneList().filter((i) => i.id !== item.id);
+    setTodosList([...todosList(), {id: todosList().length + 1, text: item.text, completed: false }]);
     setDoneList(d);
   }
 };
