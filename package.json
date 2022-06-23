@@ -2,14 +2,18 @@
   "name": "vite-template-solid",
   "version": "0.0.0",
   "description": "",
+  "homepage": "https://chisom5.github.io/todoList_App/",
   "scripts": {
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "license": "MIT",
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "vite": "^2.9.9",
     "vite-plugin-solid": "^2.2.6"
   },
