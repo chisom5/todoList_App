@@ -1,7 +1,6 @@
 import styles from "./component.module.css";
 import { doneList, handleTask } from "../pages/App";
 const Done = () => {
-  console.log(doneList())
   return (
     <div class={styles.list_container}>
       <h5>Completed Items</h5>

@@ -9,7 +9,7 @@ const [doneList, setDoneList] = createSignal([]);
 const [count, setCount] = createSignal(0);
 
 const handleChange = (e) => {
-  setTodoInput(e.currentTarget.value);
+  setTodoInput(e.currentTarget.value.trim());
 };
 
 const handleAddTodo = (e) => {
