@@ -2,6 +2,7 @@
   "name": "vite-template-solid",
   "version": "0.0.0",
   "description": "",
+  "homepage": "https://chisom5.github.io/todoList_App/",  
   "scripts": {
     "start": "vite",
     "dev": "vite",
